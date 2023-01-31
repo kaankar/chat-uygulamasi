@@ -1,0 +1,97 @@
+<html>
+<head>
+<script language="JavaScript">
+var sayac_1=0;
+var sayac_2=0;
+var first = new Array();
+var second = new Array();
+
+function yaz_1()
+{
+	document.form.iki.value = document.form.bir.value;
+	
+		first[sayac_1] = document.form.bir.value;
+		document.getElementById("display").innerHTML += "<tr><td> <div class='box1'>" + first[sayac_1] + "</div></td></tr>";
+		document.form.bir.value=null;
+		sayac_1++;
+		document.form.sayac_1.value=sayac_1;
+}
+function yaz_2 ()
+{
+	document.form.bir.value=document.form.iki.value;
+	
+		second[sayac_2] = document.form.iki.value;
+		document.getElementById("display").innerHTML += "<tr><td><div class='box2'>" + second[sayac_2] + "</div></td></tr>";
+	    document.form.iki.value=null;
+	    sayac_2++;
+	    document.form.sayac_2.value=sayac_2;
+}
+
+
+</script>
+<style>
+	.box1 {
+		background-color:#262926;
+		padding:15px;
+		margin:10px;
+		float:left;
+		border-radius: 30px;
+		max-width:350px;
+		color:white;
+	}
+	.box2 {
+		background-color:#5CF75C;
+		padding:15px;
+		margin:10px;
+		float:right;
+		border-radius: 30px;
+		max-width:350px;
+		color:white;
+	}
+	
+
+
+</style>
+</head>
+<body>
+<form method="POST" name="form">
+<table cellpadding=3 cellspacing=2>
+	<tr>
+		<td>
+			Birinci Kişi Gönder <input type="text" name="bir"  size=20>
+		</td>
+		<td>
+		<input type="button" onclick="yaz_1()" value="Gönder">
+		</td>
+		<td>
+			Sayaç <input type="text" name="sayac_1" maxlength="20" size=20> 
+		</td>
+	</tr><tr>
+		<td>
+			İkinci Kişi Gönder <input type="text" name="iki" size=20> 
+		</td>
+		<td>
+			<input type="button" onclick="yaz_2()" value="Gönder">
+		</td>
+		<td>
+			Sayaç <input type="text" name="sayac_2" maxlength="20" size=20>
+		</td>
+	</tr>
+</table>
+
+
+
+
+
+<table border=1 width=600 style="right:10px; top:10px; position:relative; float:right;">
+<tr><td>
+<table width=600 id="display" border=0>
+
+</table>
+</td></tr>
+
+
+
+</form></body></html>
+
+
